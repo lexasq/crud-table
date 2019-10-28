@@ -1,0 +1,41 @@
+<form autocomplete="off" name="loginForm" [formGroup]="employeeForm" novalidate>
+  <mat-form-field>
+    <input id="name" matInput placeholder="Name" formControlName="name">
+    <mat-error *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)">
+      Name required
+    </mat-error>
+  </mat-form-field>
+  <mat-checkbox id="active" formControlName="active">
+    Active
+  </mat-checkbox>
+  <mat-error *ngIf="f.active.invalid && (f.active.dirty || f.active.touched)">
+    Status required
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Department</mat-label>
+    <mat-select formControlName="department">
+      <mat-option *ngFor="let item of departments" [value]="item.id">
+        {{ item.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="f.department.invalid && (f.department.dirty || f.department.touched)">
+      Department required
+    </mat-error>
+  </mat-form-field>
+  <button id="btnLogin"
+          mat-raised-button
+          color="primary"
+          class="submit-button"
+          aria-label="SAVE"
+          [disabled]="employeeForm.invalid" (click)="onSubmit()">
+    {{ employee.id ? 'Save' : 'Create' }}
+  </button>
+  <a id="cancel"
+     mat-raised-button
+     color="accent"
+     class="submit-button"
+     [routerLink]="['/table']"
+     aria-label="CANCEL">
+    Cancel
+  </a>
+</form>

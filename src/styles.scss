@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+//Not sure how to import this in plunker
+//https://raw.githubusercontent.com/angular/material2-builds/master/_theming.scss
+@import '~@angular/material/_theming.scss';
+
+//@include angular-material-theme();
+
+@mixin app-core() {
+  @include mat-core();
+
+  form {
+    margin: auto;
+    width: 500px;
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@mixin app-theme($theme) {
+  @include angular-material-theme($theme);
+  //...
+}
+
+@include app-core();
+
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+@include app-theme($candy-app-theme);
+
+.unicorn-dark-theme {
+  @include app-theme($dark-theme);
+}
+

@@ -1,0 +1,14 @@
+.container {
+  width: 720px;
+  margin: 50px auto;
+  .new-employee {
+    float: right;
+    top: 15px;
+  }
+  table {
+    width: 100%;
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+}

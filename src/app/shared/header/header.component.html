@@ -1,0 +1,10 @@
+<ng-container *ngIf="user">
+  <mat-toolbar>
+    <div>
+      <span> Hello {{ this.user.firstName }} {{ this.user.lastName }}</span>
+      <button mat-raised-button color="primary" class="submit-button" aria-label="LOGOUT">
+        Logout
+      </button>
+    </div>
+  </mat-toolbar>
+</ng-container>

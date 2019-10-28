@@ -1,0 +1,22 @@
+<form autocomplete="off" name="loginForm" [formGroup]="loginForm" novalidate>
+  <mat-form-field>
+    <input id="username" matInput placeholder="Login" formControlName="username">
+    <mat-error *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)">
+      Email required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input id="password" matInput type="password" placeholder="Password"
+           formControlName="password">
+    <mat-error *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+      Password required
+    </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="invalidCredentials">
+    Invalid credentials
+  </mat-error>
+  <button id="btnLogin" mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+          [disabled]="loginForm.invalid" (click)="onSubmit()">
+    LOGIN
+  </button>
+</form>

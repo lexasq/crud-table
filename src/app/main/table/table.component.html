@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput
+           #searchInput
+           placeholder="Type here to search"/>
+  </mat-form-field>
+  <a id="btnLogin"
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/table/form']"
+          class="new-employee"
+          aria-label="ADD NEW">
+    Add new Employee
+  </a>
+  <table mat-table  *ngIf="employees && employees.length" [dataSource]="employees" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/table/form', {id: element.id}]">
+          {{element.name}}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef> Active </th>
+      <td mat-cell *matCellDef="let element"> {{ element.active | active }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef> Department </th>
+      <td mat-cell *matCellDef="let element"> {{ element.department | departmentName: departments}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="deleteEmployee(element)">
+          delete
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator #paginator (page)="loadData(paginator.pageSize, paginator.pageIndex)"
+                 [length]="employeesCount"
+                 [pageSizeOptions]="pageSizeOptions"
+                 [pageSize]="searchParams.limit"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+
