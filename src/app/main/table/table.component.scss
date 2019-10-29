@@ -10,5 +10,11 @@
     mat-icon {
       cursor: pointer;
     }
+    .delete {
+      min-width: 70px;
+      .confirm {
+        cursor: pointer;
+      }
+    }
   }
 }

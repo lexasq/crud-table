@@ -40,10 +40,13 @@
 
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> </th>
-      <td mat-cell *matCellDef="let element">
-        <mat-icon (click)="deleteEmployee(element)">
+      <td mat-cell *matCellDef="let element" class="delete">
+        <mat-icon (click)="changeConfirmDelete(element)" *ngIf="confirmDelete !== element">
           delete
         </mat-icon>
+        <span class="confirm" (click)="deleteEmployee(element)" *ngIf="confirmDelete === element">
+          Confirm
+        </span>
       </td>
     </ng-container>
 

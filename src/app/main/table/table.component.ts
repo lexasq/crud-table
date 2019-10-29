@@ -34,6 +34,7 @@ export class TableComponent implements OnInit {
   public departments: Department[] = [];
   private objectKeys = Object.keys;
   public employeesCount = 0;
+  public confirmDelete: Employee;
   public pageSizeOptions = [4, 8, 12, 20];
   public isSearching = false;
   public displayedColumns = ['id', 'name', 'active', 'department', 'delete'];
@@ -91,5 +92,9 @@ export class TableComponent implements OnInit {
     this.tableService.deleteEmployee(employee.id).subscribe( () => {
       this.loadData();
     });
+  }
+
+  changeConfirmDelete(employee: Employee) {
+    this.confirmDelete = (employee === this.confirmDelete) ? undefined : employee;
   }
 }
