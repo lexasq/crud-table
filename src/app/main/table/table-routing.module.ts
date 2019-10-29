@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './table.component';
 import { TableFormComponent } from './table-form/table-form.component';
-import { PermissionGuard } from '../../core/auth/app';
+import { PermissionGuard } from '../../core/auth/guards';
 
 const routes: Routes = [{
     path: '',

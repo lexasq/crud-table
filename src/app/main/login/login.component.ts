@@ -43,11 +43,9 @@ export class LoginComponent implements OnInit {
           return of(undefined);
         }),
       )
-      .subscribe(res => {
-        if (res) {
-          this.router.navigate(['/table']);
-          this.authService.authenticated();
-        }
+      .subscribe(() => {
+        this.router.navigate(['/table']);
+        this.authService.authenticated();
       }, () => {
         this.invalidCredentials = true;
         return of(undefined);

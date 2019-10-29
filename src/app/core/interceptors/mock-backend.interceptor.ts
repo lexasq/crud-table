@@ -8,9 +8,9 @@ import { HttpRequest,
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { EMPLOYEES } from './static/employees.static';
-import { DEPARTMENTS } from './static/departments.static';
-// array in local storage for registered users
+import { EMPLOYEES } from './fixtures/employees.fixture';
+import { DEPARTMENTS } from './fixtures/departments.fixture';
+// array for registered users
 const USERS = [{
     id: 1,
     username: 'admin',

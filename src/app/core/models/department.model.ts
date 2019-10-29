@@ -3,5 +3,5 @@ export interface Department {
   name: string;
 }
 export interface DepartmentResp {
-  results: Department[]
+  results: Department[];
 }

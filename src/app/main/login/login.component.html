@@ -15,7 +15,11 @@
   <mat-error *ngIf="invalidCredentials">
     Invalid credentials
   </mat-error>
-  <button id="btnLogin" mat-raised-button color="accent" class="submit-button" aria-label="LOGIN"
+  <button id="btnLogin"
+          mat-raised-button
+          color="accent"
+          class="submit-button"
+          aria-label="LOGIN"
           [disabled]="loginForm.invalid" (click)="onSubmit()">
     LOGIN
   </button>

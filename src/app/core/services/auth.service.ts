@@ -4,7 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model.';
-import { USERS } from '../interceptors/static/users.static';
+import { USERS } from '../interceptors/fixtures/users.fixture';
 
 @Injectable()
 export class AuthService {

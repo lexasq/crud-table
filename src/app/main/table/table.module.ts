@@ -1,9 +1,9 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableFormComponent } from './table-form/table-form.component';
 import { TableRoutingModule } from './table-routing.module';
 import { TableComponent } from './table.component';
-import { PermissionGuard } from '../../core/auth/app';
+import { PermissionGuard } from '../../core/auth/guards';
 import { MaterialModule } from '../../shared/material.module';
 import { TableService } from './table.service';
 import { ReactiveFormsModule } from '@angular/forms';

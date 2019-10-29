@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PermissionGuard } from './app';
+import { PermissionGuard } from './guards';
 
 @NgModule({
   imports: [
