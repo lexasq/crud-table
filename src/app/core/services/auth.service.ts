@@ -5,6 +5,10 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model.';
 import { USERS } from '../interceptors/fixtures/users.fixture';
+import { Store } from '@ngrx/store';
+import { Logout } from '../store/reducers/logout.reducer';
+
+
 
 @Injectable()
 export class AuthService {
@@ -13,6 +17,7 @@ export class AuthService {
   public onLogin: EventEmitter<User> = new EventEmitter<User>();
 
   constructor(private router: Router,
+              private storage: Store<any>,
               private http: HttpClient) {
     const token = localStorage.getItem('jwtToken');
     if (token) {
@@ -62,7 +67,9 @@ export class AuthService {
   }
 
   public logout(): void {
+    this.storage.dispatch(new Logout());
     localStorage.removeItem('jwtToken');
+    this.user.next(undefined);
     this.router.navigateByUrl('/login');
   }
 
@@ -70,7 +77,7 @@ export class AuthService {
    * API View that checks the veracity of a token, returning the token if it is valid.
    * @returns Observable
    */
-  public verifyToken(): Observable<Object> {
+  public verifyToken(): Observable<object> {
     return this.http.post('api/verify_token', {
       token: localStorage.getItem('jwtToken')
     });

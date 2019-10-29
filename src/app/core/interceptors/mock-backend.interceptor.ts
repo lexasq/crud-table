@@ -122,7 +122,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       const employees = {
         results: employeesList
           .filter(employee => employee.name.startsWith(query))
-          .slice(pageNumber * limit, pageNumber * limit + 4),
+          .slice(pageNumber * limit, pageNumber * limit + +limit),
         count: employeesList.length
       };
       return ok(employees);

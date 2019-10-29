@@ -50,6 +50,7 @@ export class TableComponent implements OnInit {
       this.checkUrl(key);
     });
     this.paginator.pageIndex = this.searchParams.pageNumber;
+    this.paginator.pageSize = this.searchParams.limit;
     this.store.select(DEPARTMENTS_NAME).subscribe((resp: DepartmentResp) => {
       this.departments = resp.results || [];
     });
@@ -63,7 +64,7 @@ export class TableComponent implements OnInit {
       , distinctUntilChanged()
     ).subscribe((text: string) => {
       this.isSearching = true;
-      this.loadData(undefined, undefined, text);
+      this.loadData(this.searchParams.limit, 0, text);
     });
   }
 

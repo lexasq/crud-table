@@ -18,4 +18,8 @@ export class HeaderComponent implements OnInit {
       this.user = res;
     });
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }
