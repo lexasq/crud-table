@@ -47,6 +47,9 @@
         <span class="confirm" (click)="deleteEmployee(element)" *ngIf="confirmDelete === element">
           Confirm
         </span>
+        <span class="confirm" (click)="changeConfirmDelete(element)" *ngIf="confirmDelete === element">
+          Cancel
+        </span>
       </td>
     </ng-container>
 
