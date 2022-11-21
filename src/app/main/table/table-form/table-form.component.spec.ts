@@ -3,19 +3,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableFormComponent } from './table-form.component';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../shared/material.module';
-import {ReactiveFormsModule, Validators} from '@angular/forms';
+import { ReactiveFormsModule, Validators} from '@angular/forms';
 import { PipesModule } from '../../../core/pipes/pipes.module';
 import { PermissionGuard } from '../../../core/auth/guards';
 import { TableService } from '../table.service';
 import { TableRoutingModule } from '../table-routing.module';
 import { TableComponent } from '../table.component';
-import {HttpClientModule} from "@angular/common/http";
-import {ActivatedRoute, Router} from "@angular/router";
-import {RouterTestingModule} from "@angular/router/testing";
-import {Store} from "@ngrx/store";
-import {of} from "rxjs/internal/observable/of";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {departmentRespFactory} from "../../../core/models/department.model";
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Store } from '@ngrx/store';
+import { of } from 'rxjs/internal/observable/of';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { departmentRespFactory } from '../../../core/models/department.model';
 
 
 describe('TableFormComponent', () => {
