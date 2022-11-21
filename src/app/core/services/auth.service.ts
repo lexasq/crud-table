@@ -8,8 +8,6 @@ import { USERS } from '../interceptors/fixtures/users.fixture';
 import { Store } from '@ngrx/store';
 import { Logout } from '../store/reducers/logout.reducer';
 
-
-
 @Injectable()
 export class AuthService {
   public jwtToken: string;
