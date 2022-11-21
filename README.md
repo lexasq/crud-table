@@ -4,7 +4,11 @@ To login use  `login: admin, password: test` or `login: basic, password: test`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.## Development server
+
+## Testing
+
+Run `npm test`.
 
 ## Code scaffolding
 
