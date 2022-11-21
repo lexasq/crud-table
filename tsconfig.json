@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -17,6 +18,9 @@
     "lib": [
       "es2018",
       "dom"
+    ],
+    "types": [
+      "jest"
     ]
   },
   "angularCompilerOptions": {
